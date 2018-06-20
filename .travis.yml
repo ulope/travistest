@@ -1,17 +1,11 @@
 language: python
+sudo: false
 python:
-  - 3.5
   - 3.6
 
-jobs:
-  include:
-    - stage: deploy
-      python: 3.5
-      script: echo "Deploying"
-      deploy:
-        provider: script
-        script: curl "http://neon.ulo.pe:60003/?source=deploy&job_no=${TRAVIS_JOB_NUMBER}&py=${TRAVIS_PYTHON_VERSION}"
+env:
+  matrix:
+    - BLA=1 MODE=hurz
+    - BLA=2 MODE=hurz
 
-script: curl "http://neon.ulo.pe:60003/?source=script&job_no=${TRAVIS_JOB_NUMBER}&py=${TRAVIS_PYTHON_VERSION}"
-after_success: curl "http://neon.ulo.pe:60003/?source=after_success&job_no=${TRAVIS_JOB_NUMBER}&py=${TRAVIS_PYTHON_VERSION}"
-
+script: env
