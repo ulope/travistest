@@ -3,9 +3,9 @@ sudo: false
 python:
   - 3.6
 
-env:
-  matrix:
-    - BLA=1 MODE=hurz
-    - BLA=2 MODE=hurz
-
-script: env
+jobs:
+  include:
+    - if: true
+      script: env
+    - if: branch == master
+      script: env
