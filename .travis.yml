@@ -9,3 +9,4 @@ jobs:
       script: env
     - if: branch == master
       script: env
+
