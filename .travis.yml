@@ -8,7 +8,9 @@ script: env
 
 jobs:
   include:
-    script: env
+    script: 
+      - env
+      - shell_session_update() { :; };
     deploy:
       - provider: script
         skip_cleanup: true
