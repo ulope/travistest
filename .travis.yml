@@ -7,8 +7,9 @@ script: env
 
 jobs:
   include:
-    - if: true
-      script: env
-    - if: branch == master
-      script: env
-
+    script: env
+    deploy:
+      - provider: script
+        script: echo 'first deployment'
+      - provider: script
+        script: echo 'second deployment'
