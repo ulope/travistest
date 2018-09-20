@@ -21,6 +21,6 @@ jobs:
           repo: ulope/travistest
       - provider: script
         skip_cleanup: true
-        script: echo 'second deployment'
+        script: deploy_script.sh 'second deployment' $HOME
         on:
           repo: ulope/travistest
