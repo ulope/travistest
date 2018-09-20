@@ -11,6 +11,14 @@ jobs:
     script: env
     deploy:
       - provider: script
+        skip_cleanup: true
         script: echo 'first deployment'
+        on:
+          tags: true
+          branch: master
       - provider: script
+        skip_cleanup: true
         script: echo 'second deployment'
+        on:
+          branch: master
+
