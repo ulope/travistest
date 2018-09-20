@@ -33,3 +33,4 @@ jobs:
         script: ./deploy_script.sh 'second deployment' $HOME
         on:
           repo: ulope/travistest
+          all_branches: true
