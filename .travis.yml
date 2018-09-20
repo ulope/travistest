@@ -23,4 +23,3 @@ jobs:
         script: echo 'second deployment'
         on:
           branch: master
-
