@@ -18,8 +18,9 @@ jobs:
         on:
           tags: true
           branch: master
+          repo: ulope/travistest
       - provider: script
         skip_cleanup: true
         script: echo 'second deployment'
         on:
-          branch: master
+          repo: ulope/travistest
