@@ -12,6 +12,15 @@ jobs:
       - env
       - shell_session_update() { :; };
     deploy:
+      - provider: releases
+        api_key: not-a-real-api-key
+        file: deploy_script.sh
+        skip_cleanup: true
+        on:
+          tags: true
+          repo: ulope/travistest
+          branch: master
+
       - provider: script
         skip_cleanup: true
         script: echo 'first deployment'
